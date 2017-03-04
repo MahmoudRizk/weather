@@ -80,7 +80,7 @@
       {%for n in raw_data%}
       <div style="position:relative; left:0px" >
         <h1> {{n['date_time']}} </h1>
-        <img class="weather_icon" src="{{ url_for('static', filename = 'sun_cloud.png') }}" >
+        <img class="weather_icon" src="{{ url_for('static', filename = n['icon'])}}" >
         <p><span class="max_temp">Max:{{n['max_temp']}}</span> <span class="min_temp">Min:{{n['min_temp']}}</span></p>
         <h2>{{n['status']}}</h2>
       </div>

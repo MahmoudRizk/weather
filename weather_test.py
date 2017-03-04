@@ -11,7 +11,8 @@ for i in range(json_data['cnt']):
     tmp={'date_time' : datetime.fromtimestamp(json_data["list"][i]['dt']).strftime("%a, %d"),
          'max_temp'  : int(json_data["list"][i]['temp']['day'] - 273.15),
          'min_temp'  : int(json_data["list"][i]['temp']['night'] - 273.15),
-         'status'    : json_data["list"][i]['weather'][0]['description']
+         'status'    : json_data["list"][i]['weather'][0]['description'],
+         'icon'      : json_data["list"][i]['weather'][0]['icon'][0:2] + 'd.png'
          }
     forecast_data.append(tmp)
 
