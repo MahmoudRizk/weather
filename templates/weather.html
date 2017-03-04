@@ -4,10 +4,11 @@
     <style>
         body{
 
-              /*background-color:rgba(33,34,34,.96);
+              /*background:rgba(33,34,34,.42);
                 /*background-size:90% 200%;*/
               /*background-size:auto;
               background-repeat: no-repeat;*/
+
         }
         body::before{
               background: url("{{ url_for('static', filename = 'trona-pinnacles-milky-way.jpg') }}");
@@ -19,14 +20,14 @@
               height: 100%;
               opacity: 1;
               z-index: -1;
-              background-repeat: no-repeat;
+              background-repeat: no-repeat
         }
         div{
             background-color:rgba(33,34,34,.65);
             color: rgb(6, 184, 251);
             border: 2px solid rgba(6, 184, 251,.5);
             border-radius: 5px;
-            width: 240px;
+            width: 380px;
             /*
             resize: both;
             overflow: auto;
@@ -70,6 +71,13 @@
           background-color:rgba(33,34,34,0);
           border: 0px solid rgba(6, 184, 251,.5);
         }
+        .floating-box {
+          display: inline-block;
+          /*width: 150px;
+          height: 400px;
+          */
+          margin: 0px;
+        }
 
     </style>
 
@@ -78,7 +86,8 @@
   <body>
     <div  class="scroll">
       {%for n in raw_data%}
-      <div style="position:relative; left:0px" >
+    <!--  <div style="position:relative; left:0px" > -->
+     <div class="floating-box">
         <h1> {{n['date_time']}} </h1>
         <img class="weather_icon" src="{{ url_for('static', filename = n['icon'])}}" >
         <p><span class="max_temp">Max:{{n['max_temp']}}</span> <span class="min_temp">Min:{{n['min_temp']}}</span></p>
